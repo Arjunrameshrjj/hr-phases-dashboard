@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Phases Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dash-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="ri-command-fill"></i></div>
+                <span>HR Command Center</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <span class="nav-label">PHASES</span>
+                <a href="#recruitment" class="nav-item active" data-phase="recruitment">
+                    <i class="ri-user-add-line"></i>
+                    <span>Recruitment</span>
+                </a>
+                <a href="#onboarding" class="nav-item" data-phase="onboarding">
+                    <i class="ri-ship-line"></i>
+                    <span>Onboarding</span>
+                </a>
+                <a href="#probation" class="nav-item" data-phase="probation">
+                    <i class="ri-shield-check-line"></i>
+                    <span>Probation</span>
+                </a>
+                <a href="#performance" class="nav-item" data-phase="performance">
+                    <i class="ri-bar-chart-box-line"></i>
+                    <span>Performance</span>
+                </a>
+                <a href="#exit" class="nav-item" data-phase="exit">
+                    <i class="ri-logout-box-r-line"></i>
+                    <span>Exit</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=18181b&color=fff" alt="Admin">
+                    <div class="user-info">
+                        <span class="user-name">Administrator</span>
+                        <span class="user-role">HR Director</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search employees, metrics, or departments...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="ri-notification-3-line"></i></button>
+                    <button class="icon-btn"><i class="ri-settings-4-line"></i></button>
+                    <button class="primary-btn">Generate Report</button>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <div>
+                        <h1 id="page-title">Recruitment Phase</h1>
+                        <p id="page-subtitle" class="text-muted">Tracking pipeline and acquisition velocity</p>
+                    </div>
+                    <div class="date-picker" id="datePickerBtn">
+                        <i class="ri-calendar-line"></i>
+                        <span id="datePickerLabel">Last 30 Days</span>
+                        <i class="ri-arrow-down-s-line"></i>
+                        <div class="date-dropdown" id="dateDropdown">
+                            <div class="date-option" data-value="7">Last 7 Days</div>
+                            <div class="date-option active" data-value="30">Last 30 Days</div>
+                            <div class="date-option" data-value="90">Last Quarter</div>
+                            <div class="date-option" data-value="365">Last Year</div>
+                            <div class="date-option" data-value="all">All Time</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid" id="metrics-container">
+                    <!-- Cards will be injected by JS -->
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3 id="chart-title-1">Cumulative Growth (Worm Graph)</h3>
+                            <button class="more-btn"><i class="ri-more-2-fill"></i></button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="mainChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3 id="chart-title-2">Funnel Stage Breakdown</h3>
+                            <button class="more-btn"><i class="ri-more-2-fill"></i></button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="secondaryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section (Table or Additional info) -->
+                <div class="data-table-section">
+                    <div class="card-header">
+                        <h3 id="table-title">Recent Applicants</h3>
+                        <button class="btn-outline">View All</button>
+                    </div>
+                    <div class="table-container">
+                        <table id="data-table">
+                            <thead>
+                                <!-- Injected by JS -->
+                            </thead>
+                            <tbody>
+                                <!-- Injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
